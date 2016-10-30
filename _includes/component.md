@@ -1,7 +1,8 @@
 ## Component
 
 Component is a crucial part.
-Lets create a simple component named `Clock`
+Lets create a simple component named `Clock`.
+Remember to add `opal-browser` gem to your `Gemfile`, and require it in your component.
 
 ```ruby
 class Clock

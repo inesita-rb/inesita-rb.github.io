@@ -9,11 +9,11 @@ class Layout
   def render
     div class: 'container' do
       component NavBar
-      component outlet
+      component router
     end
   end
 end
 ```
 
-`outlet` is a component that will render all sub-components.
+`autlet` is a component that will render all sub-components.
 With this layout, all pages will include a `Navbar` component.
