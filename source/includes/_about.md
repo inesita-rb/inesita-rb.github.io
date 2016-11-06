@@ -1,11 +1,9 @@
 # About
 
-Component, Router, and Injections
-
 Inesita is a simple, light, Ruby front-end framework. Yes, Ruby, it's all about Ruby, and its ecosystem.
-It consists of three main parts. Application is composed of components. Components describe the appearance and behaviour of the page.
-Router routes given URLs to components. And finally store. Store stores data, this is just a simple wrapper.
-You can implement your own store based for example on hash or whatever you like.
-Components can be used alone and mount in any DOM element. You don't need to use entire stack.
 
-How to start? It's simple.
+The main part is `component`. Component describe the appearance and behavior of the page.
+This is a core of Inesita. Components can be used alone and mount in any DOM element. You don't need to use the entire stack.
+Moreover `component` supports `injections`.
+You can inject any of other classes into the main component. They will be available to all nested components. For example, you can inject a `Store` class to store your application data. Of course, implementation of `store` entirely depends on you.
+Another example of the injection is `router`. Router take care of all navigation stuff like rendering component tree depending on browser URL, changing URL etc.
