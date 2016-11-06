@@ -4,7 +4,7 @@ title: Inesita
   - ruby
 
 toc_footers:
-  - <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
   - about
