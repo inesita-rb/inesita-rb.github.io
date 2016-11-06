@@ -9,6 +9,12 @@ toc_footers:
 includes:
   - about
   - install
+  - component
+  - application
+  - router
+  - layout
+  - injections
+  - awesome
 
 search: true
 ---

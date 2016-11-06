@@ -36,9 +36,9 @@ configure :build do
   activate :minify_javascript
   # activate :relative_assets
   # activate :asset_hash
-  # activate :gzip
+  activate :gzip
 end
 
 # Deploy Configuration
 # If you want Middleman to listen on a different port, you can set that below
-set :port, 4567
+set :port, 9292

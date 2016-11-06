@@ -354,7 +354,7 @@ html, body {
   }
 
   h1 {
-    @extend %header-font;
+    @extend %special-header-font;
     font-size: 40px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
@@ -520,7 +520,7 @@ html, body {
     @extend %left-col;
 
     p {
-      @extend %header-font;
+      @extend %special-header-font;
       margin: 0;
     }
 
