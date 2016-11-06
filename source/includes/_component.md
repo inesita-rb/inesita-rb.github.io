@@ -1,119 +1,86 @@
 # Component
 
-Component is a crucial part.
-Lets create a simple component named `Clock`.
-Remember to add `opal-browser` gem to your `Gemfile`, and require it in your component.
+As you already know `component` is a main part. We have a main `Application` component,
+but also other components. For example `Home` component,
 
 ```ruby
-class Clock
-  include Inesita::Component
-
-  def initialize
-    @time = Time.now
-  end
-
-  def render
-    div.clock do
-      text @time.strftime('%r')
-    end
-  end
-end
-```
-
-Now we should mount it to DOM element `<div id="clock"></div>`:
-
-```ruby
-$document.ready do
-  Clock.mount_to($document['clock'])
-end
-```
-
-It works, but what's a clock that won't refresh? Let's fix it:
-
-```ruby
-class Clock
-  include Inesita::Component
-
-  def initialize
-    @time = Time.now
-    every 1 do
-      @time = Time.now
-      render!
-    end
-  end
-
-  def render
-    div.clock do
-      text @time.strftime('%r')
-    end
-  end
-end
-```
-
-Beautiful, clock works like a charm.
-We have added a simple block that executes once a second. In this case we reset the `@time` variable and update the component with `render!`
-Simple, isn't it?
-
-Components can be nested. For example, to add another component that wraps `Clock` in a `code` tag:
-
-```ruby
-class CodeClock
+class Home
   include Inesita::Component
 
   def render
-    code do
-      component Clock
-    end
-  end
-end
-```
-
-Mount it.
-
-```ruby
-$document.ready do
-  CodeClock.mount_to($document['clock'])
-end
-```
-
-When components are nested, we can pass props to child components like this:
-
-```ruby
-class CodeClock
-  include Inesita::Component
-
-  def render
-    code do
-      component Clock, props: { label: 'This is clock' }
-    end
-  end
-end
-```
-
-And use it like this:
-
-```ruby
-class Clock
-  include Inesita::Component
-
-  def initialize
-    @time = Time.now
-    every 1 do
-      @time = Time.now
-      render!
-    end
-  end
-
-  def render
-    div.clock do
-      span do
-        text props[:label]
+    div.jubmotron class: 'text-center' do
+      img src: '/static/inesita-rb.png'
+      h1 do
+        text "Hello I'm Inesita"
       end
-      text @time.strftime('%r')
+      component Counter, props: {header: 'This is a sample counter'}
     end
   end
 end
 ```
 
+This is simple `component` that render `bootstrap` jumbotron with few headers.
+We're using a nice and fancy DSL to render html. No html files needed. Only ruby.
 
-Nice. Now we are ready to move forward and describe other parts.
+`Home` is a very simple component that render only html.
+
+As you can see we can pass `class` to define classes of element, but also `id`, `onclick` and other element attributes.
+Notice that, you can use shortcut for element classes like `div.jumbotron`.
+In this case `div` will include `jumbotron` class and `text-center`.
+You can also do `div.example!` bang means that this is `id` instead of `class`.
+
+This component also render `Counter` component in out tree.
+We can pass `props` to child components like this.
+
+Now take a look at `Counter` component.
+
+```ruby
+class Counter
+  include Inesita::Component
+
+  def inc
+    store.increase
+    render!
+  end
+
+  def dec
+    store.decrease
+    render!
+  end
+
+  def render
+    h4 do
+      text props[:header]
+    end
+    div class: 'input-group' do
+      span class: 'input-group-btn' do
+        button class: 'btn btn-default', onclick: method(:dec) do
+          text '-'
+        end
+      end
+      input type: "text", class: "form-control", value: store.counter, disabled: true
+      span class: 'input-group-btn' do
+        button class: 'btn btn-default', onclick: -> { inc } do
+          text '+'
+        end
+      end
+    end
+  end
+end
+```
+
+Wow, there is a lot new things. Let start with `render` method.
+In `h4` we render a props - things that was passed from parent component.
+
+Next one is a button. In this case `dec` method descrives `onclick` behavior.
+This method invokes methods from store, and render out component tree.
+
+`render!` method rerender all component tree. No worries, there is `virtual-dom` that will only render a differece to DOM. It's fast.
+
+Same thing happend with `inc` method and `+` button, but we're using a `function` notation, that invokes `dec` method.
+
+In the middle there are input that display counter value from store.
+
+Of course you can store a component state in instance variables, it depend on you.
+
+Now we need to look at `injections`.
