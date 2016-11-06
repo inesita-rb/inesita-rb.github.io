@@ -29,7 +29,7 @@ This is an `injection` example. We including `Inesita::Injection` so we will abl
 
 In this example, we're storing counter value.
 
-`init` method initializes aur store. At the beginning we're setting counter value to 0.
+`init` method initializes our store. At the beginning we're setting counter value to 0.
 
 `increase` method increasing current counter value by 1
 

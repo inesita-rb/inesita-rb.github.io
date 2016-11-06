@@ -27,7 +27,7 @@ We're using a nice and fancy DSL to render html. No html files needed. Only ruby
 As you can see we can pass `class` to define classes of element, but also `id`, `onclick` and other element attributes.
 Notice that, you can use shortcut for element classes like `div.jumbotron`.
 In this case `div` will include `jumbotron` class and `text-center`.
-You can also do `div.example!` bang means that this is `id` instead of `class`.
+You can also do `div.example!` exclamation mark means that this is `id` instead of `class`.
 
 This component also render `Counter` component in out tree.
 We can pass `props` to child components like this.
@@ -81,6 +81,6 @@ Same thing happend with `inc` method and `+` button, but we're using a `function
 
 In the middle there are input that display counter value from store.
 
-Of course you can store a component state in instance variables, it depend on you.
+Of course you can store a component state in instance variables, it depends on you.
 
 Now we need to look at `injections`.

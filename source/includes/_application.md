@@ -45,13 +45,13 @@ Here you can require all project files, external gems etc.
 - `require 'store'` - require our store
 - `require_tree './components'` - require all other components placed in `components` dir
 
-`Application` is the main component. As we can see we injecting `Router` and `Store`,
+`Application` is the main component. As we can see we're injecting `Router` and `Store`,
 so they will be available in all component tree as `router` and `store`
 
-We will need them. In `store` we will store all application state and data,
+In `store` we will store all application state and data,
 `router` will render our component tree depending on browser URL.
 
-`render` method defines how what Inesita will render our components.
+`render` method defines how Inesita will render our components.
 It's like a layout, within `div` with `container` class `NavBar` and `router` will be rendered.
 
 Last part is mounting our application. When document is ready, our main component will be mount into `<body></body>` tag.
