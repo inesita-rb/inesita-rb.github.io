@@ -1,9 +1,9 @@
 # Injections
 
-Injections are simple other class that are included in our component tree.
-In our example we have `Store` and `Router` injection.
+Injections are simply other classes that are included in our component tree.
+In our example we have `Store` and `Router` injections.
 
-Take a look at our `Store`
+Take a look at our `Store`.
 
 ```ruby
 class Store
@@ -25,18 +25,18 @@ class Store
 end
 ```
 
-This is an `injection` example. We including `Inesita::Injection` so we will able to inject this class to root component.
+This is an `injection` example. We are including `Inesita::Injection` in order to be able to inject this class into the root component.
 
 In this example, we're storing counter value.
 
-`init` method initializes our store. At the beginning we're setting counter value to 0.
+The `init` method initializes our store. At the beginning we're setting the counter value to 0.
 
-`increase` method increasing current counter value by 1
+The `increase` method increments current counter value by 1
 
-`decrease` method decreasing current counter value by 1
+The `decrease` method decrements current counter value by 1
 
 There is also `attr_accessor :counter` so we can access that value with `store.counter`.
 
 Simple! Right?
 
-You can inject other stores, but also things like dispatchers depending on architecture you want to obtain.
+You can inject other stores, but also things like dispatchers depending on the architecture you want to obtain.

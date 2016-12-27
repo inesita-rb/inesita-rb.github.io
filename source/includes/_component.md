@@ -1,7 +1,7 @@
 # Component
 
-As you already know `component` is a main part. We have a main `Application` component,
-but also other components. For example `Home` component,
+As you already know, `component` is at the core of Inesita. We have seen the main `Application` component,
+now let's take a look at the `Home` component.
 
 ```ruby
 class Home
@@ -19,20 +19,19 @@ class Home
 end
 ```
 
-This is simple `component` that render `bootstrap` jumbotron with few headers.
-We're using a nice and fancy DSL to render html. No html files needed. Only ruby.
+This is simple `component` that renders `bootstrap` jumbotron with a few headers.
+We're using a nice and simple DSL to render HTML. No HTML files here, only Ruby.
 
-`Home` is a very simple component that render only html.
+So, `Home` is a very simple component that only renders HTML.
 
-As you can see we can pass `class` to define classes of element, but also `id`, `onclick` and other element attributes.
-Notice that, you can use shortcut for element classes like `div.jumbotron`.
-In this case `div` will include `jumbotron` class and `text-center`.
-You can also do `div.example!` exclamation mark means that this is `id` instead of `class`.
+As you can see, we can pass `class` to define classes of elements, but also `id`, `onclick`, and other element attributes.
+Notice that you can use a shortcut for element classes like `div.jumbotron`.
+In this case `div` will include `jumbotron` class and `text-center` class.
+You can also do `div.example!` - the exclamation mark means that `example` is an `id` instead of a `class`.
 
-This component also render `Counter` component in out tree.
-We can pass `props` to child components like this.
+This component also renders a `Counter` child component, and passes to it some `props`.
 
-Now take a look at `Counter` component.
+Now let's take a look at the `Counter` component.
 
 ```ruby
 class Counter
@@ -69,18 +68,18 @@ class Counter
 end
 ```
 
-Wow, there is a lot new things. Let start with `render` method.
-In `h4` we render a props - things that was passed from parent component.
+Wow, there is a lot of new things. Let start with the `render` method.
+In `h4` we render the header text from `props` - things that were passed from the parent component.
 
-Next one is a button. In this case `dec` method descrives `onclick` behavior.
-This method invokes methods from store, and render out component tree.
+Next one is a button. In this case the `dec` method describes `onclick` behavior.
+This method invokes methods from `store`, and renders out the component tree.
 
-`render!` method rerender all component tree. No worries, there is `virtual-dom` that will only render a differece to DOM. It's fast.
+The `render!` method re-renders the entire component tree. No worries, there is `virtual-dom` that will only render differences to the actual DOM. It's fast.
 
-Same thing happend with `inc` method and `+` button, but we're using a `function` notation, that invokes `dec` method.
+Same thing happens with the `inc` method and the `+` button, but we're using a `function` notation to invoke the `dec` method.
 
-In the middle there are input that display counter value from store.
+In the middle there is an input field that displays the counter value from `store`.
 
-Of course you can store a component state in instance variables, it depends on you.
+Of course you can store component state in instance variables, it depends on you.
 
-Now we need to look at `injections`.
+Now we need to take a look at `injections`.

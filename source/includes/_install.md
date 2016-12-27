@@ -18,4 +18,4 @@ What are we doing ?
 - Run server
 - Now we can go to [http://localhost:9292](http://localhost:9292)
 
-As we can see everything work awesome. Let's take a cloaser look at our application.
+As we can see everything works awesome. Let's take a closer look at our application.
