@@ -1,6 +1,6 @@
 # Styles
 
-The default stylesheet is `app/stylesheet.css.sass`. It uses [Sass](http://sass-lang.com). You can create you own stylesheets and `@import` them in this file.
+The default stylesheet is `app/stylesheet.css.sass`. It uses [Sass](http://sass-lang.com). You can create your own stylesheets and `@import` them in this file.
 For example, if we want to include [Bootstrap](http://getbootstrap.com):
 
 ```sass
