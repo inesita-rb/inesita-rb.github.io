@@ -11,6 +11,7 @@ includes:
   - component
   - injections
   - router
+  - dom
   - awesome
 
 search: true
