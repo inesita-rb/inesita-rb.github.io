@@ -6,4 +6,4 @@ rvm:
   - 2.4.0
 
 cache: bundler
-script: bundle exec middleman build
+script: bundle exec middleman build --verbose
