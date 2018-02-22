@@ -8,7 +8,7 @@ class Home
   include Inesita::Component
 
   def render
-    div.jubmotron class: 'text-center' do
+    div.jubmotron.text_center do
       img src: '/static/inesita-rb.png'
       h1 do
         text "Hello I'm Inesita"
@@ -51,15 +51,15 @@ class Counter
     h4 do
       text props[:header]
     end
-    div class: 'input-group' do
-      span class: 'input-group-btn' do
-        button class: 'btn btn-default', onclick: method(:dec) do
+    div.input_group do
+      span.input_group_btn do
+        button.btn.btn_default, onclick: method(:dec) do
           text '-'
         end
       end
-      input type: "text", class: "form-control", value: store.counter, disabled: true
-      span class: 'input-group-btn' do
-        button class: 'btn btn-default', onclick: -> { inc } do
+      input.form_control type: "text", value: store.counter, disabled: true
+      span.input_group_btn do
+        button.btn.btn_default, onclick: -> { inc } do
           text '+'
         end
       end
