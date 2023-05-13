@@ -10,10 +10,12 @@ set :markdown,
     no_intra_emphasis: true
 
 # Assets
-set :css_dir, 'stylesheets'
-set :js_dir, 'javascripts'
-set :images_dir, 'images'
-set :fonts_dir, 'fonts'
+# set :css_dir, 'stylesheets'
+# set :js_dir, 'javascripts'
+# set :images_dir, 'images'
+# set :fonts_dir, 'fonts'
+
+set :sass_assets_paths, ['sources/stylesheets']
 
 activate :sprockets
 
@@ -34,7 +36,7 @@ set :relative_links, true
 configure :build do
   # If you're having trouble with Middleman hanging, commenting
   # out the following two lines has been known to help
-  activate :minify_css
+  # activate :minify_css
   activate :minify_javascript
   # activate :relative_assets
   # activate :asset_hash
