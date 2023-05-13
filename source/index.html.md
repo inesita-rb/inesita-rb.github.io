@@ -12,7 +12,7 @@ includes:
   - injections
   - router
   - dom
-  - sprockets
+# - sprockets
   - awesome
 
 search: true
